@@ -22,7 +22,7 @@
     margin: 0;
   }
   
-  .about-link {
+  .link {
     background-color: #FF5722;
     font-family: Verdana, Geneva, sans-serif;
     border: 1px solid #FFAB91;
@@ -36,7 +36,7 @@
     margin-top: 25px;
     transition-duration: 0.2s;
   }
-  .about-link:hover {
+  .link:hover {
     background-color: #E64A19;
   }
   .profile-bubble {
@@ -65,5 +65,6 @@
 <h1 class="main-header">
   Welcome home.
 </h1>
-<%= link_to "About", about_path, class: "about-link" %>
+<%= link_to "About", about_path, class: "link" %>
+<%= link_to "Articles", articles_path, class: "link" %>
 <%= link_to image_tag('Desiigner.jpg', class: 'profile-pic'), 'https://www.instagram.com/lifeofdesiigner/', class: 'profile-bubble' %>

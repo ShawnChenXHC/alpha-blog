@@ -8,7 +8,7 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>More</th>
+    <th>Actions</th>
   </tr>
   <% @articles.each do |article| %>
     <tr>
@@ -16,7 +16,12 @@
       <td><%= article.description %></td>
       <td>
         <%= link_to "View", article_path(article) %>
-        <%= link_to "Edit", edit_article_path(article) %></td>
+        <%= link_to "Edit", edit_article_path(article) %>
+        <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
     </tr>
   <% end %>
 </table>
+<p>
+  <%= link_to "Home", root_path %>
+</p>
