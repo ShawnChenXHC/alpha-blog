@@ -3,12 +3,19 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   
+  def show
+    @article = Article.find(params[:id])
+  end
+  
   def create
-    #render plain: params.inspect
     @article = Article.new(article_params)
-    @article.save
-    # Redirect to the "show" action and "show" template
-    redirect_to articles_show(@article)
+    if @article.save
+      # If the validation passed
+      flash[:notice] = "Article was successfully created"
+      redirect_to article_path(@article)
+    else
+      render 'new'
+    end
   end
   
   
